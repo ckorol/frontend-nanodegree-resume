@@ -1,17 +1,16 @@
 // JSON for bio data
-
 var bio = {
-  "name" : "Chris Korol",
-  "role" : "Web Developer",
-  "contacts" : {
-    "mobile" : "206-276-8099",
-    "email" : "chris@lauckhart.com",
-    "github" : "ckorol",
-    "location" : "8202 19th Ave NE, Seattle, WA  98115"
+  "name": "Chris Korol",
+  "role": "Web Developer",
+  "contacts": {
+    "mobile": "206-276-8099",
+    "email": "chris@lauckhart.com",
+    "github": "ckorol",
+    "location": "8202 19th Ave NE, Seattle, WA  98115"
   },
-  "biopic" : "images/headshot6.jpg",
-  "welcomeMessage" : "After 20 years in product managment and marketing at Internet companies (including one I started and sold), I decided to cross over to web development!",
-  "skills" : ["HTML5", "CSS3", "Creative Cloud", "Javascript", "SQL"]
+  "biopic": "images/headshot6.jpg",
+  "welcomeMessage": "After 20 years in product managment and marketing at Internet companies (including one I started and sold), I decided to cross over to web development!",
+  "skills": ["HTML5", "CSS3", "Creative Cloud", "JavaScript", "SQL"]
 };
 
 // Function to replace placeholders and append formatted bio data to header
@@ -38,7 +37,7 @@ bio.display = function() {
     $('#header').append(HTMLskillsStart);
     // var i = 0;
     // while (i<bio.skills.length) {
-    for (var i=0; i<bio.skills.length; i++) {
+    for (var i = 0; i < bio.skills.length; i++) {
       var formattedSkills = HTMLskills.replace('%data%', bio.skills[i]);
       $('#header').append(formattedSkills);
       // i = i+1;
@@ -54,27 +53,26 @@ bio.display();
 
 //JSON for work history
 var work = {
-  "jobs" : [
-    {
-    "employer" : "n/a",
-    "title" : "Retired",
-    "dates" : "2016 - present",
-    "location" : "Seattle, WA",
-    "description" : "Retired after Full Slate was sold to Internet Brands as part of a larger divestiture.  Relocated from Bay Area back to Seattle. Began exploring ideas for a new venture, developing business model and conducting market research.  Enrolled in software development nanodegree program through Udacity."
+  "jobs": [{
+      "employer": "n/a",
+      "title": "Retired",
+      "dates": "2016 - present",
+      "location": "Seattle, WA",
+      "description": "Retired after Full Slate was sold to Internet Brands as part of a larger divestiture.  Relocated from Bay Area back to Seattle. Began exploring ideas for a new venture, developing business model and conducting market research.  Enrolled in software development nanodegree program through Udacity."
     },
     {
-    "employer" : "Intuit",
-    "title" : "Senior Product Line Manager",
-    "dates" : "2014 - 2016",
-    "location" : "San Francisco, CA",
-    "description" : "Developed opportunities to integrate and cross-promote Full Slate with QuickBooks Online and other Intuit products.   Oversaw product marketing, website, SEO and SEM for Demandforce; managed 7 person team and outside agencies.  Developed and evangelized new product concept for low-end SMB marketing offering."
+      "employer": "Intuit",
+      "title": "Senior Product Line Manager",
+      "dates": "2014 - 2016",
+      "location": "San Francisco, CA",
+      "description": "Developed opportunities to integrate and cross-promote Full Slate with QuickBooks Online and other Intuit products.   Oversaw product marketing, website, SEO and SEM for Demandforce; managed 7 person team and outside agencies.  Developed and evangelized new product concept for low-end SMB marketing offering."
     },
     {
-    "employer" : "Full Slate",
-    "title" : "Co-founder, VP Product & Marketing",
-    "dates" : "2008 - 2014",
-    "location" : "Seattle, WA",
-    "description" : "Created online scheduling software for small businesses.  Boostraped SaaS business from concept to multi-million dollar run-rate.  Acquired thousands of paying subscribers at 4:1 CAC ratio through cost-effective marketing and word of mouth.  Achieved Net Promoter score of 62 by focusing on exceptional usability and custmer service."
+      "employer": "Full Slate",
+      "title": "Co-founder, VP Product & Marketing",
+      "dates": "2008 - 2014",
+      "location": "Seattle, WA",
+      "description": "Created online scheduling software for small businesses.  Boostraped SaaS business from concept to multi-million dollar run-rate.  Acquired thousands of paying subscribers at 4:1 CAC ratio through cost-effective marketing and word of mouth.  Achieved Net Promoter score of 62 by focusing on exceptional usability and custmer service."
     }
   ]
 };
@@ -96,7 +94,7 @@ var work = {
 // Function to replace placeholders and append formatted data to Work Experience section
 work.display = function() {
   if (work.jobs.length > 0) {
-    work.jobs.forEach(function(job){
+    work.jobs.forEach(function(job) {
       var formattedEmployer = HTMLworkEmployer.replace('%data%', job.employer);
       var formattedTitle = HTMLworkTitle.replace('%data%', job.title);
       var formattedDates = HTMLworkDates.replace('%data%', job.dates);
@@ -115,26 +113,25 @@ work.display();
 
 //JSON for projects
 var projects = {
-  "projects" : [
-    {
-    "title" : "Responsive Website",
-    "dates" : "2016",
-    "description" : "Coded fully responsive website from scratch using HTML5 and CSS3.",
-    "images" :["images/portfolio.png"]
+  "projects": [{
+      "title": "Responsive Website",
+      "dates": "2016",
+      "description": "Coded fully responsive website from scratch using HTML5 and CSS3.",
+      "images": ["images/portfolio.png"]
     },
     {
-    "title" : "Javascript Resume",
-    "dates" : "2017",
-    "description" : "Used javascript, JSON and jQuery to populate data in resume.",
-    "images" :[]
+      "title": "Javascript Resume",
+      "dates": "2017",
+      "description": "Used javascript, JSON and jQuery to populate data in resume.",
+      "images": []
     }
   ]
 };
 
 //Function to replace placeholders and append formatted project data
-projects.display = function(){
+projects.display = function() {
   if (projects.projects.length > 0) {
-    projects.projects.forEach(function(project){
+    projects.projects.forEach(function(project) {
       var formattedTitle = HTMLprojectTitle.replace('%data%', project.title);
       var formattedDates = HTMLprojectDates.replace('%data%', project.dates);
       var formattedDescription = HTMLprojectDescription.replace('%data%', project.description);
@@ -143,7 +140,7 @@ projects.display = function(){
       $('.project-entry:last').append(formattedDates);
       $('.project-entry:last').append(formattedDescription);
       if (project.images.length > 0) {
-        for (var i = 0; i<project.images.length; i++) {
+        for (var i = 0; i < project.images.length; i++) {
           var formattedImage = HTMLprojectImage.replace('%data%', project.images[i]);
           $('.project-entry:last').append(formattedImage);
         }
@@ -156,30 +153,26 @@ projects.display();
 
 //JSON for schools and courses
 var education = {
-  "schools" : [
-    {
-    "name" : "University of Wisconsin",
-    "dates" : "1993-1996",
-    "location" : "Madison, WI",
-    "degree" : "Bachelor of Business Administration",
-    "majors" : ["Marketing"],
-    "url" : "https://wsb.wisc.edu/"
-    }
-  ],
-  "onlineCourses" : [
-    {
-    "school" : "Udacity",
-    "title" : "Frontend Web Developer Nanodegree",
-    "dates" : "2016-present",
-    "url" : "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-    }
-  ]
+  "schools": [{
+    "name": "University of Wisconsin",
+    "dates": "1993-1996",
+    "location": "Madison, WI",
+    "degree": "Bachelor of Business Administration",
+    "majors": ["Marketing"],
+    "url": "https://wsb.wisc.edu/"
+  }],
+  "onlineCourses": [{
+    "school": "Udacity",
+    "title": "Frontend Web Developer Nanodegree",
+    "dates": "2016-present",
+    "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+  }]
 };
 
 //Function to display school and course data if said array isn't empty
-education.display = function(){
+education.display = function() {
   if (education.schools.length > 0) {
-    education.schools.forEach(function(school){
+    education.schools.forEach(function(school) {
       var formattedSchool = HTMLschoolName.replace('%data%', school.name);
       var formattedSchool = formattedSchool.replace('#', school.url);
       var formattedDates = HTMLschoolDates.replace('%data%', school.dates);
@@ -193,7 +186,7 @@ education.display = function(){
     });
   }
   if (education.onlineCourses.length > 0) {
-    education.onlineCourses.forEach(function(course){
+    education.onlineCourses.forEach(function(course) {
       var formattedSchool = HTMLonlineSchool.replace('%data%', course.school);
       var formattedTitle = HTMLonlineTitle.replace('%data%', course.title);
       var formattedTitle = formattedTitle.replace('#', course.url);
@@ -225,5 +218,5 @@ $('#mapDiv').append(googleMap);
 $(document).click(function(loc) {
   var x = loc.pageX;
   var y = loc.pageY;
-  logClicks(x,y);
+  logClicks(x, y);
 });
